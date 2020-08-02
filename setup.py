@@ -36,13 +36,19 @@ setup(
         'Topic :: Text Processing :: Linguistic',
         'Topic :: Utilities',
     ],
+    entry_points={
+        'console_scripts': [
+            'whitakers_words = whitakers_words.__main__:main'
+        ]
+    },
     description=(''),
     # find actual keywords in future
     keywords=['literature', 'philology', 'text processing', 'archive'],
     license='MIT',
     long_description="""Whitaker's Words is a port of William Whitaker's 'Whitaker's Words' original Ada code to Python so that it may continue to be useful to Latin students and philologists for years to come.""",
     name='whitakers_words',
-    packages=list(["whitakers_words.generated", *find_namespace_packages(include=["whitakers_words", "whitakers_words.*"], exclude=["whitakers_words.tests","whitakers_words.tests.*"])]),
+    packages=list(["whitakers_words.generated", *find_namespace_packages(include=["whitakers_words",
+                                                                                  "whitakers_words.*"], exclude=["whitakers_words.tests", "whitakers_words.tests.*"])]),
     url='https://github.com/blagae/whitakers_words',
     version='0.2.0',
     zip_safe=True,
